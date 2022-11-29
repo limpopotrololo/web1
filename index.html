@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>1lab</title>
+    <style>
+        #header-block {
+            font-family: sans-serif;
+            font-size: 15px;
+            background: pink;
+            border-radius: 10px;
+            display: flex;
+            margin-left: 2%;
+            margin-right: 2%;
+
+        }
+
+        .meme {
+            margin-right: 10%;
+            margin-left: 10%;
+        }
+
+        .header {
+            margin-left: 5%;
+            margin-right: 30%;
+        }
+
+        #header-block:hover {
+            background: linear-gradient(to right, pink, #d9be87);
+
+
+        }
+
+        .pic {
+            margin-top: 5%;
+        }
+
+        .graph {
+            margin-left: 2%;
+            border-radius: 10px;
+            margin-top: 3%;
+            margin-right: 5%;
+            margin-bottom: 40%;
+
+        }
+
+        .task-pic {
+            box-shadow: 0px 0px 15px 10px pink;
+        }
+
+        .access_frame {
+            margin-right: 15%;
+            border-radius: 10px;
+            margin-top: 3%;
+            background: pink;
+            box-shadow: 0px 0px 15px 10px pink;
+
+        }
+
+        .access_frame:hover {
+            background: linear-gradient(#d9be87, pink);
+        }
+
+        .r_button {
+            justify-content: center;
+            width: 40px;
+            border-radius: 5px;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        .service_button {
+            margin-top: 10%;
+            margin-bottom: 5%;
+        }
+
+        .access_frame {
+            padding-left: 1%;
+            padding-right: 1%;
+        }
+
+        body {
+            background: linear-gradient(#d9be87, pink);
+        }
+
+        #result-table {
+            margin-top: 3%;
+            margin-right: 40%;
+        }
+
+        table, th, tr, td {
+            border: 1px solid black;
+            padding: 10px;
+            font-family: Sans-Serif;
+            font-size: 14px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        y-warning{
+            border: 1px solid black;
+        }
+        .active{
+            background: pink;
+        }
+        .important {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="header-block">
+    <div class="header">
+        <h1>Ри Аркадий, P32081</h1>
+        <h2>Вариант 1612</h2>
+    </div>
+    <div class="meme" hidden>
+        <img class="pic" src="img/meme-img.png" height="100" width="180" >
+    </div>
+</div>
+
+<div class="main">
+
+    <div class="graph">
+        <img class="task-pic" src="img/task.png" width="280" height="280">
+    </div>
+
+    <div class="access_frame">
+        <form action="php/check_point.php" method="get">
+            <div class="check_box_group">
+                <h2>X:</h2>
+                <p><input type="radio" name="x" value="-5" checked> -5 </p>
+                <p><input type="radio" name="x" value="-4"> -4 </p>
+                <p><input type="radio" name="x" value="-3"> -3 </p>
+                <p><input type="radio" name="x" value="-2"> -2 </p>
+                <p><input type="radio" name="x" value="0"> 0 </p>
+                <p><input type="radio" name="x" value="1"> 1 </p>
+                <p><input type="radio" name="x" value="2"> 2 </p>
+                <p><input type="radio" name="x" value="3"> 3 </p>
+            </div>
+            <div class="text_field">
+                <h2>Y:</h2>
+                <input type="text" id="input_Y" name="y" placeholder="[-3;3]" maxlength="6" required>
+                <p id="y-warning" hidden >Data must be in the range [-3;3]</p>
+            </div>
+            <div class="button_group">
+                <h2>R:</h2>
+                <button type="button" id="r1" class="r_button active" name="r"  value="1">1</button>
+                <button type="button" id="r2" class="r_button" name="r" value="1.5">1.5</button>
+                <button type="button" id="r3" class="r_button" name="r" value="2">2</button>
+                <button type="button" id="r4" class="r_button" name="r" value="2.5">2.5</button>
+                <button type="button" id="r5" class="r_button" name="r" value="3">3</button>
+                <input id="buf" name="r" hidden value="1">
+            </div>
+            <div class="service_button">
+                <button type="submit" id="submit">Submit</button>
+                <button type="button" id="clear">Clear</button>
+            </div>
+        </form>
+    </div>
+    <div id="table_block">
+        <table id="result-table">
+            <tr>
+                <td>№</td>
+                <td>X</td>
+                <td>Y</td>
+                <td>R</td>
+                <td>Result</td>
+                <td>Attempt time</td>
+                <td>Processing time</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-3.6.1.js"></script>
+<script src="js/table.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/meme.js"></script>
+
+</html>
